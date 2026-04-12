@@ -4,42 +4,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的网站</title>
+  <title id="siteTitle"></title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <header>
-    <h2>我的网站</h2>
+    <h2 id="siteTitle"></h2>
     <nav>
-      <a href="#home">首页</a>
-      <a href="#about">关于我</a>
-      <a href="#works">作品</a>
-      <a href="#contact">联系</a>
+      <a href="#home" id="navHome"></a>
+      <a href="#about" id="navAbout"></a>
+      <a href="#works" id="navWorks"></a>
+      <a href="#contact" id="navContact"></a>
+      <button class="lang-btn" data-lang="zh">中文</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="id">Bahasa Indonesia</button>
     </nav>
   </header>
 
   <section id="home">
-    <h1>欢迎来到我的网站</h1>
-    <p>这是我用 VSCode 做的第一个页面</p>
+    <h1 id="welcome"></h1>
+    <p id="desc"></p>
   </section>
 
   <section id="about">
-    <h3>关于我</h3>
-    <p>我正在学习做网站，慢慢进步中。</p>
+    <h3 id="aboutTitle"></h3>
+    <p id="aboutDesc"></p>
   </section>
 
   <section id="works">
-    <h3>我的作品</h3>
-    <p>作品1、作品2、作品3</p>
+    <h3 id="worksTitle"></h3>
+    <p id="worksDesc"></p>
   </section>
 
   <section id="contact">
-    <h3>联系我</h3>
-    <p>邮箱：2262599920@qq.com</p>
+    <h3 id="contactTitle"></h3>
+    <p id="contactDesc"></p>
   </section>
 
+  <script src="i18n.js"></script>
 </body>
 
 </html>

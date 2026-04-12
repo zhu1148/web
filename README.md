@@ -20,6 +20,8 @@ web/
 
 ├── style.css # 样式文件
 
+├── i18n.js # 多语言文本
+
 └── README.md # 项目说明文档
 plaintext
 
