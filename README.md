@@ -16,7 +16,7 @@
 ## 📁 项目结构
 web/
 
-├── My web.html # 主页面
+├── index.html # 主页面
 
 ├── style.css # 样式文件
 
