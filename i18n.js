@@ -12,7 +12,9 @@ const translations = {
         worksTitle: "我的作品",
         worksDesc: "作品1、作品2、作品3",
         contactTitle: "联系我",
-        contactDesc: "邮箱：2262599920@qq.com"
+        contactDesc: "邮箱: 2262599920@qq.com",
+        darkMode: "深色模式",
+        lightMode: "浅色模式"
     },
     en: {
         siteTitle: "My Website",
@@ -27,7 +29,9 @@ const translations = {
         worksTitle: "My Works",
         worksDesc: "Work 1, Work 2, Work 3",
         contactTitle: "Contact Me",
-        contactDesc: "Email: 2262599920@qq.com"
+        contactDesc: "Email: 2262599920@qq.com",
+        darkMode: "Dark Mode",
+        lightMode: "Light Mode"
     },
     id: {
         siteTitle: "Website Saya",
@@ -42,32 +46,56 @@ const translations = {
         worksTitle: "Karya Saya",
         worksDesc: "Karya 1, Karya 2, Karya 3",
         contactTitle: "Hubungi Saya",
-        contactDesc: "Email: 2262599920@qq.com"
+        contactDesc: "Email: 2262599920@qq.com",
+        darkMode: "Mode Gelap",
+        lightMode: "Mode Terang"
     }
-
 };
 
 let currentLang = "zh";
+let isDark = false;
+const darkBtn = document.getElementById("darkModeBtn");
 
-// 更新页面文字
+// 核心：更新所有文字（包含深色按钮）
 function updateTexts() {
     const data = translations[currentLang];
-    for (const id in data) {
-        const el = document.getElementById(id);
-        if (el) el.textContent = data[id];
+    // 遍历所有翻译项，给对应ID的元素赋值
+    for (const key in data) {
+        const el = document.getElementById(key);
+        if (el) el.textContent = data[key];
+    }
+    // 强制同步深色按钮文字
+    updateDarkBtnText();
+}
+
+// 同步深色按钮文字
+function updateDarkBtnText() {
+    const data = translations[currentLang];
+    if (isDark) {
+        darkBtn.textContent = data.lightMode;
+    } else {
+        darkBtn.textContent = data.darkMode;
     }
 }
 
-// 切换语言
+// 页面加载完成后初始化
 document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".lang-btn");
-    buttons.forEach(btn => {
+    // 1. 绑定语言切换按钮
+    const langButtons = document.querySelectorAll(".lang-btn");
+    langButtons.forEach(btn => {
         btn.addEventListener("click", () => {
             currentLang = btn.dataset.lang;
             updateTexts();
         });
     });
 
-    // 初始加载
+    // 2. 绑定深色模式切换
+    darkBtn.addEventListener("click", () => {
+        isDark = !isDark;
+        document.body.classList.toggle("dark");
+        updateDarkBtnText();
+    });
+
+    // 3. 初始加载中文
     updateTexts();
 });

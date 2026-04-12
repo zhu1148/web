@@ -4,8 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="siteTitle"></title>
+  <title>我的网站</title>
   <link rel="stylesheet" href="style.css">
+  <!-- 多尺寸 favicon，适配所有设备 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
@@ -13,13 +18,20 @@
   <header>
     <h2 id="siteTitle"></h2>
     <nav>
-      <a href="#home" id="navHome"></a>
-      <a href="#about" id="navAbout"></a>
-      <a href="#works" id="navWorks"></a>
-      <a href="#contact" id="navContact"></a>
-      <button class="lang-btn" data-lang="zh">中文</button>
-      <button class="lang-btn" data-lang="en">English</button>
-      <button class="lang-btn" data-lang="id">Bahasa Indonesia</button>
+      <!-- 第一行：导航链接 -->
+      <div class="nav-links">
+        <a href="#home" id="navHome"></a>
+        <a href="#about" id="navAbout"></a>
+        <a href="#works" id="navWorks"></a>
+        <a href="#contact" id="navContact"></a>
+      </div>
+      <!-- 第二行：语言+深色模式按钮 -->
+      <div class="nav-buttons">
+        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="id">Bahasa Indonesia</button>
+        <button id="darkModeBtn">深色模式</button>
+      </div>
     </nav>
   </header>
 

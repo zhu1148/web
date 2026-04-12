@@ -56,3 +56,169 @@ p {
     color: #555;
     font-size: 15px;
 }
+
+/* 黑夜模式 */
+.dark {
+    background-color: #1a1a1a;
+    color: #eee;
+}
+
+.dark header {
+    background-color: #111;
+    color: #eee;
+}
+
+.dark section {
+    background-color: #2a2a2a;
+    color: #eee;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+    color: #eee;
+}
+
+.dark p {
+    color: #ccc;
+}
+
+#darkModeBtn {
+    background: #555;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    margin-left: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 强制导航栏分两行，绝对生效 */
+nav {
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列，直接分两行 */
+    align-items: center;
+    /* 两行都居中 */
+    gap: 10px;
+    /* 两行之间的间距 */
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* 第一行：导航链接 */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    /* 链接之间的间距 */
+}
+
+/* 第二行：按钮组 */
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+    /* 按钮之间的间距 */
+}
+
+/* 按钮样式统一美化 */
+.lang-btn,
+#darkModeBtn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#darkModeBtn {
+    background: #555;
+}
+
+.lang-btn:hover,
+#darkModeBtn:hover {
+    opacity: 0.9;
+}
+
+/* —————————— 导航栏两行排版（永久生效） —————————— */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+}
+
+/* 第一行：导航链接 */
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* 第二行：所有按钮 */
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* —————————— 语言按钮美化 —————————— */
+.lang-btn {
+    background: #4a90e2;
+    color: white !important;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lang-btn:hover {
+    background: #3570b0;
+}
+
+/* —————————— 深色模式按钮美化 —————————— */
+#darkModeBtn {
+    background: #555;
+    color: white !important;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+    min-width: 100px;
+}
+
+#darkModeBtn:hover {
+    background: #777;
+}
+
+/* —————————— 深色模式整体配色（超好看） —————————— */
+.dark {
+    background: #121212;
+    color: #eee;
+}
+
+.dark header {
+    background: #1a1a1a;
+}
+
+.dark .nav-links a {
+    color: #eee;
+}
+
+.dark section {
+    background: #222;
+    color: #eee;
+}
