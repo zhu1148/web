@@ -222,3 +222,102 @@ nav {
     background: #222;
     color: #eee;
 }
+
+/* 导航栏全局布局：强制两行，适配所有语言 */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 第一行：导航链接，自适应宽度，不换行 */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(16px, 5vw, 48px);
+    width: 100%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: clamp(16px, 3vw, 20px);
+    color: #fff;
+    white-space: nowrap;
+    /* 强制文字不换行 */
+    text-align: center;
+    min-width: 70px;
+    /* 给印尼语留足空间 */
+}
+
+/* 第二行：按钮组，自适应换行，不溢出 */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+/* 语言按钮样式：适配长文本 */
+.lang-btn {
+    background: #4a90e2;
+    color: #fff !important;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+    /* 按钮文字不换行 */
+}
+
+.lang-btn:hover {
+    background: #3570b0;
+}
+
+/* 深色模式按钮 */
+#darkModeBtn {
+    background: #555;
+    color: #fff !important;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: clamp(14px, 2.5vw, 16px);
+    cursor: pointer;
+    transition: 0.2s;
+    min-width: 100px;
+    white-space: nowrap;
+}
+
+#darkModeBtn:hover {
+    background: #666;
+}
+
+/* 深色模式下导航文字颜色 */
+.dark .nav-links a {
+    color: #fff;
+}
+
+/* 响应式适配：手机端自动调整 */
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        min-width: 60px;
+        font-size: 15px;
+    }
+
+    .lang-btn,
+    #darkModeBtn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+}
