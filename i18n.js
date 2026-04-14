@@ -56,31 +56,20 @@ let currentLang = "zh";
 let isDark = false;
 const darkBtn = document.getElementById("darkModeBtn");
 
-// 核心：更新所有文字（包含深色按钮）
+// 更新所有文字
 function updateTexts() {
     const data = translations[currentLang];
-    // 遍历所有翻译项，给对应ID的元素赋值
     for (const key in data) {
         const el = document.getElementById(key);
         if (el) el.textContent = data[key];
     }
-    // 强制同步深色按钮文字
-    updateDarkBtnText();
-}
-
-// 同步深色按钮文字
-function updateDarkBtnText() {
-    const data = translations[currentLang];
-    if (isDark) {
-        darkBtn.textContent = data.lightMode;
-    } else {
-        darkBtn.textContent = data.darkMode;
-    }
+    // 更新深色按钮文字
+    darkBtn.textContent = isDark ? data.lightMode : data.darkMode;
 }
 
 // 页面加载完成后初始化
 document.addEventListener("DOMContentLoaded", function () {
-    // 1. 绑定语言切换按钮
+    // 绑定语言切换按钮
     const langButtons = document.querySelectorAll(".lang-btn");
     langButtons.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -89,13 +78,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // 2. 绑定深色模式切换
+    // 绑定深色模式切换
     darkBtn.addEventListener("click", () => {
         isDark = !isDark;
         document.body.classList.toggle("dark");
-        updateDarkBtnText();
+        updateTexts();
     });
 
-    // 3. 初始加载中文
+    // 初始加载中文
     updateTexts();
 });

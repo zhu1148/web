@@ -23,18 +23,42 @@ header {
 }
 
 nav {
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 12px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-nav a {
-    color: white;
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(16px, 5vw, 48px);
+    width: 100%;
+}
+
+.nav-links a {
     text-decoration: none;
-    margin: 0 12px;
-    font-size: 16px;
+    font-size: clamp(16px, 3vw, 20px);
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    min-width: 70px;
 }
 
-nav a:hover {
+.nav-links a:hover {
     color: #3498db;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
 }
 
 /* 内容区域 */
@@ -57,154 +81,7 @@ p {
     font-size: 15px;
 }
 
-/* 黑夜模式 */
-.dark {
-    background-color: #1a1a1a;
-    color: #eee;
-}
-
-.dark header {
-    background-color: #111;
-    color: #eee;
-}
-
-.dark section {
-    background-color: #2a2a2a;
-    color: #eee;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
-}
-
-.dark h1,
-.dark h2,
-.dark h3 {
-    color: #eee;
-}
-
-.dark p {
-    color: #ccc;
-}
-
-#darkModeBtn {
-    background: #555;
-    color: #fff;
-    border: none;
-    padding: 6px 10px;
-    margin-left: 6px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* 强制导航栏分两行，绝对生效 */
-nav {
-    display: flex;
-    flex-direction: column;
-    /* 垂直排列，直接分两行 */
-    align-items: center;
-    /* 两行都居中 */
-    gap: 10px;
-    /* 两行之间的间距 */
-    padding: 10px 0;
-    width: 100%;
-}
-
-/* 第一行：导航链接 */
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    /* 链接之间的间距 */
-}
-
-/* 第二行：按钮组 */
-.nav-buttons {
-    display: flex;
-    gap: 8px;
-    /* 按钮之间的间距 */
-}
-
-/* 按钮样式统一美化 */
-.lang-btn,
-#darkModeBtn {
-    background: #3498db;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-#darkModeBtn {
-    background: #555;
-}
-
-.lang-btn:hover,
-#darkModeBtn:hover {
-    opacity: 0.9;
-}
-
-/* —————————— 导航栏两行排版（永久生效） —————————— */
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 0;
-}
-
-/* 第一行：导航链接 */
-.nav-links {
-    display: flex;
-    gap: 32px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #ffffff;
-}
-
-/* 第二行：所有按钮 */
-.nav-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-/* —————————— 语言按钮美化 —————————— */
-.lang-btn {
-    background: #4a90e2;
-    color: white !important;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.lang-btn:hover {
-    background: #3570b0;
-}
-
-/* —————————— 深色模式按钮美化 —————————— */
-#darkModeBtn {
-    background: #555;
-    color: white !important;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 0.2s;
-    min-width: 100px;
-}
-
-#darkModeBtn:hover {
-    background: #777;
-}
-
-/* —————————— 深色模式整体配色（超好看） —————————— */
+/* 深色模式 */
 .dark {
     background: #121212;
     color: #eee;
@@ -215,7 +92,7 @@ nav {
 }
 
 .dark .nav-links a {
-    color: #eee;
+    color: #fff;
 }
 
 .dark section {
@@ -223,48 +100,18 @@ nav {
     color: #eee;
 }
 
-/* 导航栏全局布局：强制两行，适配所有语言 */
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 20px 12px;
-    width: 100%;
-    box-sizing: border-box;
+.dark h1,
+.dark h3 {
+    color: #eee;
 }
 
-/* 第一行：导航链接，自适应宽度，不换行 */
-.nav-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: clamp(16px, 5vw, 48px);
-    width: 100%;
+.dark p {
+    color: #ccc;
 }
 
-.nav-links a {
-    text-decoration: none;
-    font-size: clamp(16px, 3vw, 20px);
-    color: #fff;
-    white-space: nowrap;
-    /* 强制文字不换行 */
-    text-align: center;
-    min-width: 70px;
-    /* 给印尼语留足空间 */
-}
-
-/* 第二行：按钮组，自适应换行，不溢出 */
-.nav-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-}
-
-/* 语言按钮样式：适配长文本 */
-.lang-btn {
+/* 按钮样式 */
+.lang-btn,
+#darkModeBtn {
     background: #4a90e2;
     color: #fff !important;
     border: none;
@@ -274,37 +121,22 @@ nav {
     cursor: pointer;
     transition: 0.2s;
     white-space: nowrap;
-    /* 按钮文字不换行 */
+}
+
+#darkModeBtn {
+    background: #555;
+    min-width: 100px;
 }
 
 .lang-btn:hover {
     background: #3570b0;
 }
 
-/* 深色模式按钮 */
-#darkModeBtn {
-    background: #555;
-    color: #fff !important;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-size: clamp(14px, 2.5vw, 16px);
-    cursor: pointer;
-    transition: 0.2s;
-    min-width: 100px;
-    white-space: nowrap;
-}
-
 #darkModeBtn:hover {
     background: #666;
 }
 
-/* 深色模式下导航文字颜色 */
-.dark .nav-links a {
-    color: #fff;
-}
-
-/* 响应式适配：手机端自动调整 */
+/* 响应式适配 */
 @media (max-width: 480px) {
     .nav-links {
         gap: 12px;
