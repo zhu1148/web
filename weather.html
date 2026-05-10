@@ -19,7 +19,8 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: url('ChatGPT Image 2026年5月8日 19_42_10.png') no-repeat center center fixed;
+            background-size: cover;
             padding: 20px;
         }
 
@@ -213,10 +214,10 @@
 
 <body>
     <div class="weather-card">
-        <h2>🌤️ 实时天气查询</h2>
+        <h2>实时天气查询</h2>
         <p class="subtitle">支持全国任意城市、区县、街道</p>
 
-        <button class="locate-btn" onclick="autoLocate()">📍 自动定位当前位置</button>
+        <button class="locate-btn" onclick="autoLocate()">自动定位当前位置</button>
 
         <div class="input-group">
             <input type="text" class="city-input" id="cityInput" placeholder="输入城市或区县，如：深圳龙岗区" value="">
@@ -319,7 +320,7 @@
                 const info = getWeatherInfo(current.weathercode);
 
                 resultDiv.innerHTML = `
-                    <div class="location-tag">📍 ${name}</div>
+                    <div class="location-tag">${name}</div>
                     <div class="desc">${info.icon} ${info.text}</div>
                     <div class="temp">${current.temperature}°</div>
                     <div class="detail-grid">
