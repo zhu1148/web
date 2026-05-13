@@ -6,10 +6,14 @@
     font-family: "Microsoft YaHei", sans-serif;
 }
 
+/* 修改 style.css 中的 body 部分 */
 body {
-    background-color: #f5f5f5;
+    /* 替换原本的 background-color: #f5f5f5; */
+    background: url('https://zhu1148.github.io/web/ChatGPT Image 2026年5月8日 19_42_10.png') no-repeat center center fixed;
+    background-size: cover;
     line-height: 1.6;
     padding: 20px;
+    min-height: 100vh;
 }
 
 /* 头部导航 */
@@ -63,11 +67,26 @@ nav {
 
 /* 内容区域 */
 section {
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
+    /* 70% 透明度的白色 */
+    backdrop-filter: blur(10px);
+    /* 模糊效果 */
+    -webkit-backdrop-filter: blur(10px);
+    /* 兼容 Safari 浏览器 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* 增加细微边框感 */
     padding: 25px;
     margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    /* 圆角稍微调大一点更有设计感 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    /* 柔和的阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 h1,
@@ -81,9 +100,31 @@ p {
     font-size: 15px;
 }
 
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#weatherSlogan {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+    text-align: right;
+}
+
+.dark #weatherSlogan {
+    color: rgba(255, 255, 255, 0.6);
+}
+
 /* 深色模式 */
 .dark {
-    background: #121212;
+    background: url('https://zhu1148.github.io/web/ChatGPT Image 2026年5月8日 19_42_10.png') no-repeat center center fixed;
+    /* 移除纯色背景，显示 body 的背景图 */
+    background-size: cover;
     color: #eee;
 }
 
@@ -96,8 +137,12 @@ p {
 }
 
 .dark section {
-    background: #222;
-    color: #eee;
+    background: rgba(0, 0, 0, 0.6);
+    /* 使用更深但带透明度的黑色 */
+    backdrop-filter: blur(12px);
+    /* 增加模糊感 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* 增加极细的亮边 */
 }
 
 .dark h1,
@@ -107,6 +152,10 @@ p {
 
 .dark p {
     color: #ccc;
+}
+
+.dark #weatherSlogan {
+    color: #aaa;
 }
 
 /* 按钮样式 */

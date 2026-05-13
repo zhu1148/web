@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(pip install *)",
+      "PowerShell(python -c \"from server import get_cpu, get_memory, get_gpu, get_vpn, get_processes; print\\('CPU:', get_cpu\\(\\)['percent'], '%'\\); print\\('Memory:', get_memory\\(\\)\\); print\\('GPU:', get_gpu\\(\\)\\); print\\('VPN:', get_vpn\\(\\)\\); print\\('Processes:', len\\(get_processes\\(\\)\\)\\)\")",
+      "PowerShell(python -c \"from server import get_vpn; print\\(get_vpn\\(\\)\\)\")",
+      "PowerShell(nvidia-smi *)",
+      "PowerShell(Get-WmiObject *)",
+      "PowerShell(python -c \"import psutil; [print\\(name\\) for name in psutil.net_if_addrs\\(\\)]\")",
+      "PowerShell(python -c \"from server import get_gpu, get_vpn; print\\('GPU:', get_gpu\\(\\)\\); print\\('VPN:', get_vpn\\(\\)\\)\")"
+    ]
+  }
+}
